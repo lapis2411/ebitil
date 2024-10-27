@@ -2,6 +2,7 @@ package ebitil
 
 import (
 	"math"
+	"math/rand"
 )
 
 type Vector2D struct {
@@ -53,4 +54,8 @@ func (v *Vector2D) Magnitude() float64 {
 func (v *Vector2D) Normalized() Vector2D {
 	mag := v.Magnitude()
 	return Vector2D{v.X / mag, v.Y / mag}
+}
+
+func GetRandomVector2D(maxX, maxY float64) Vector2D {
+	return Vector2D{X: rand.Float64() * maxX, Y: rand.Float64() * maxY}
 }
